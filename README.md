@@ -7,6 +7,11 @@
 - node js version >= 21 or 22
 - npm version >= 10
 
+## Sign In Page
+
+- email = free
+- password = free
+
 ## Tech Stack
 
 This project uses the following technologies and libraries:
