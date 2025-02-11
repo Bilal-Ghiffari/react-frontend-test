@@ -6,9 +6,11 @@ import {
   getListOfIngredients,
   updateIngredients,
 } from "../services/localStorage";
+import useAlert from "./useAlert";
 
 const useIngredientsModal = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const { alerts, addAlert, removeAlert } = useAlert();
   const [isEditMode, setIsEditMode] = React.useState(false);
   const [currentIngredientsId, setCurrentIngredientsId] = React.useState<
     number | null
@@ -54,9 +56,16 @@ const useIngredientsModal = () => {
     }
     form.resetFields();
     handleOk();
+    addAlert(
+      `Success ${isEditMode ? "Edit" : "Create"} Ingredients ${values?.name}`,
+      "success"
+    );
   };
 
   return {
+    alerts,
+    addAlert,
+    removeAlert,
     isModalOpen,
     showModal,
     handleOk,
