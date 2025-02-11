@@ -29,6 +29,9 @@ const InventoryManagement: React.FunctionComponent<
     isEditMode,
     isModalOpen,
     showModal,
+    addAlert,
+    alerts,
+    removeAlert,
   } = useIngredientsModal();
   const { handleSearch, search } = useSearch("");
   const [searchParams] = useSearchParams();
@@ -39,6 +42,8 @@ const InventoryManagement: React.FunctionComponent<
     initialLimit: limit,
     initialPage: +getSearchQueryPage,
   });
+
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setDataIngredients(getListOfIngredients());
@@ -119,9 +124,6 @@ const InventoryManagement: React.FunctionComponent<
         total_price: formatRupiah(+coffee.total_price),
       }));
   }, [dataIngredients, search, page, limit]);
-
-  const { alerts, addAlert, removeAlert } = useAlert();
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   return (
     <>

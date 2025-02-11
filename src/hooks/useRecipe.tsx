@@ -22,6 +22,7 @@ const useRecipe = () => {
   }, 0);
 
   const ingredientLists = recipeIngredients.map((coffee) => ({
+    key: coffee.id,
     ingredient: coffee.name,
     amounte: `${coffee.qty * cupCount} ${coffee?.uom?.toUpperCase()}`,
     total_cost: formatRupiah(coffee.qty * cupCount * coffee.total_price),
