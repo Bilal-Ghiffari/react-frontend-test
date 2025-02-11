@@ -5,7 +5,6 @@ import { useSearchParams } from "react-router";
 import CommonPagination from "../../components/common/common-pagination";
 import SideBar from "../../components/common/sidebar";
 import WrapperTable from "../../components/wrapper-table";
-import useAlert from "../../hooks/useAlert";
 import useIngredientsModal from "../../hooks/useIngredientsModal";
 import usePagination from "../../hooks/usePagination";
 import useSearch from "../../hooks/useSearch";
@@ -85,7 +84,7 @@ const InventoryManagement: React.FunctionComponent<
       title: "Actions",
       key: "actions",
       align: "center",
-      render: (text: any, record: any) => {
+      render: (_: any, record: any) => {
         return (
           <div className="flex gap-x-5 justify-center">
             <Button
