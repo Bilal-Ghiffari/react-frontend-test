@@ -1,6 +1,11 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to Run the Project
+
+npm install
+npm run dev
+node js version >= 21 or 22
+npm version >= 10
 
 ## Tech Stack
 
