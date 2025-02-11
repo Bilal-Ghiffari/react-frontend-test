@@ -2,15 +2,15 @@ import React from "react";
 import { useNavigate, useSearchParams } from "react-router";
 
 type usePaginationProps = {
-  initialPage: number;
   initialLimit: number;
+  initialPage: number;
 };
 
 export default function usePagination({
   initialLimit,
   initialPage,
 }: usePaginationProps) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [page, setPage] = React.useState<number>(initialPage);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ export default function usePagination({
       newQuery[key] = param;
     });
     newQuery.page = page.toString();
-    newQuery.limit = pageSize.toString();
+    newQuery.limit = pageSize.toString() || initialLimit.toString();
 
     const UrlSearchParams = new URLSearchParams(newQuery).toString();
     navigate(`?${UrlSearchParams}`, { replace: true });
