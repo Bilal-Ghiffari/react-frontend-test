@@ -2,10 +2,10 @@
 
 ## How to Run the Project
 
-npm install
-npm run dev
-node js version >= 21 or 22
-npm version >= 10
+- npm install
+- npm run dev
+- node js version >= 21 or 22
+- npm version >= 10
 
 ## Tech Stack
 
