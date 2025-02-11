@@ -11,7 +11,6 @@ interface IWrapperTableProps<T> {
   };
   isShowPagination?: boolean;
   pagination?: React.ReactNode;
-  positionPagination?: "top" | "bottom" | "both";
   loading: boolean;
 }
 
@@ -20,7 +19,6 @@ const WrapperTable = <T extends {}>({
   tableConfig,
   isShowPagination = false,
   pagination,
-  positionPagination,
   loading,
 }: IWrapperTableProps<T>) => {
   const getTableConfig = () => ({
